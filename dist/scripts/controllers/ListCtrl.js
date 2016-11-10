@@ -1,9 +1,9 @@
 (function() {
-    function ListCtrl() {
-    	//import list from database here/ng-repeat in field
+    function ListCtrl(Objects) {
+    	this.objects = Objects.getData();
     }
  
      angular
          .module('objectTracker')
-         .controller('ListCtrl', ListCtrl);
+         .controller('ListCtrl', ['Objects', ListCtrl]);
  })();

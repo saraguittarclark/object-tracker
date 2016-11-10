@@ -9,6 +9,7 @@
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <!--   <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
@@ -27,7 +28,7 @@
 				<h1>Object Tracker</h1>
 			</div><!--/one-half-->
 			<div class="one-half column">
-				<a href="#">Add an object</a>
+				<!-- <button><a href="#">Create new list</a></button> -->
 			</div><!--/one-half-->
 		</div><!--/row-->
 	</div><!--/container-->
@@ -35,26 +36,49 @@
 <section id="main">
 	<div class="container">
 		<div class="row">
-			<div class="one-third column">	
+			<div class="four columns border">	
+
 				<!--SAMPLE LIST ONLY/NOT FOR PRODUCTION-->
 				<!--will show the viewer's list and new user default text-->
-				<ul id="list"> Sample List
-					<li>TLE 1</li>
-					<li>Object - Platform</li>
-					<li>Object - Receiver</li>
-					<li>TLE 4</li>
+				<ul id="list"><h5>User List</h5>
+					<!--sref of data-view-->
+					<li><a ui-sref="result">TLE 1</a></li>
+					<li><a ui-sref="result">Platform</a></li>
+					<li><a ui-sref="result">Receiver</a></li>
+					<li><a ui-sref="result">TLE 4</a></li>
 				</ul>
-				<p><a ui-sref="blank">Reset List</a></p>
+				<p><a ui-sref="#">Reset List</a></p>
+				<!--button click will clear list, confirm-->
 				<!--SAMPLE LIST ONLY/NOT FOR PRODUCTION-->
-			</div><!--/one-third-->
-			<div class="one-third column">
-				<ul id="filter-one">
+				<div class="dropdown">
+					<button class="dropdown-button">Track an Object <i class="fa fa-caret-down"></i></button>
+					<div class="dropdown-content u-full-width">
+						<a ui-sref="search.transmitter-default">Transmitters - Default</a>
+						<a ui-sref="search.transmitter-eirp">Transmitters - Fixed EIRP</a>
+						<a ui-sref="search.platform-satellite">Platforms - Satellite</a>
+						<a ui-sref="search.platform-static">Platforms - Static</a>
+						<a ui-sref="search.receiver">Receiver</a>
+<!-- 					<a ui-sref="Simulation">Create a Simulation</a>
+ 						<a ui-sref="#">GRP</a>
+						<a ui-sref="#">Waveform</a>
+						<a ui-sref="#">Sensor</a>  -->
+					</div>
+				</div><!--/dropdown-->
 
-				</ul>
 			</div><!--/one-third-->
-			<div class="one-third">
-				
+			<div class="four columns search">
+				<ui-view></ui-view>
 			</div>
+			<div class="four columns result">
+				<div class="border" id="result-panel">
+					<p>Search results here</p>
+					<!-- Data from the result controller returned to html -->
+					<div class="find-reset-buttons">
+						<button class="button-primary" id="add-button">Add to List</button>
+						<button id="blank-button">Reset</button>
+					</div>
+				</div>
+			</div> 
 		</div><!--/row-->
 	</div><!--container-->
 </section><!--/main-->
@@ -63,11 +87,17 @@
 </section><!--/footer-->  
 
 <!--Scripts--> 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
- <script src="/scripts/app.js"></script>
- <script src="/scripts/controllers/ListCtrl.js"></script>
- <script src="/scripts/services/Demo.js"></script>
+<script src="/scripts/app.js"></script>
+<script src="/scripts/services/Objects.js"></script>
+<script src="/scripts/controllers/ListCtrl.js"></script>
+<script src="/scripts/controllers/ReceiverCtrl.js"></script>
+<script src="/scripts/controllers/TransmitterDCtrl.js"></script>
+<script src="/scripts/controllers/TransmitterECtrl.js"></script>
+<script src="/scripts/controllers/PlatformTLECtrl.js"></script>
+<script src="/scripts/controllers/PlatformStaticCtrl.js"></script>
+<script src="/scripts/controllers/ResultCtrl.js"></script>
 </body>
 
 </html>

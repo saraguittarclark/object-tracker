@@ -1,9 +1,9 @@
 (function() {
-    function ListCtrl(Demo) {
-    	this.objects = Demo;
+    function ListCtrl(Objects) {
+    	this.objects = Objects.getData();
     }
  
      angular
          .module('objectTracker')
-         .controller('ListCtrl', ['Demo', ListCtrl]);
+         .controller('ListCtrl', ['Objects', ListCtrl]);
  })();
