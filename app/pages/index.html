@@ -37,38 +37,46 @@
 
 				<!--SAMPLE LIST ONLY/NOT FOR PRODUCTION-->
 				<!--will show the viewer's list and new user default text-->
-				<ul id="list"><h5>User List</h5>
-					<!--sref of data-view-->
+				<!-- <h5>Create an Object</h5> -->
+<!-- 				<ul id="list">
 					<li><a ui-sref="result">TLE 1</a></li>
 					<li><a ui-sref="result">Platform</a></li>
 					<li><a ui-sref="result">Receiver</a></li>
 					<li><a ui-sref="result">TLE 4</a></li>
-				</ul>
-				<p><a ui-sref="#">Reset List</a></p>
+				</ul> -->
+				<!-- <p><a ui-sref="#">Reset List</a></p> -->
 				<!--button click will clear list, confirm-->
 				<!--SAMPLE LIST ONLY/NOT FOR PRODUCTION-->
 				<div class="dropdown">
-					<button class="dropdown-button">Track an Object <i class="fa fa-caret-down"></i></button>
+					<button class="dropdown-button">Create an Object <i class="fa fa-caret-down"></i></button>
 					<div class="dropdown-content u-full-width">
-						<a ui-sref="search.transmitter-default">Transmitters - Default</a>
-						<a ui-sref="search.transmitter-eirp">Transmitters - Fixed EIRP</a>
-						<a ui-sref="search.platform-satellite">Platforms - Satellite</a>
-						<a ui-sref="search.platform-static">Platforms - Static</a>
-						<a ui-sref="search.receiver">Receiver</a>
+						<a ui-sref="create.antenna">Antenna</a>
+						<a ui-sref="create.odo">Orbital Description Object</a>
+						<a ui-sref="create.platform-satellite">Platform - Satellite with TLE</a>
+						<a ui-sref="create.platform-static">Platform - Static</a>
+						<a ui-sref="create.receiver">Receiver - Fixed Sensitivity</a>
+						<a ui-sref="create.transmitter-default">Transmitter - Default</a>
+						<a ui-sref="create.transmitter-eirp">Transmitter - Fixed EIRP</a>
+
 <!-- 					<a ui-sref="Simulation">Create a Simulation</a>
  						<a ui-sref="#">GRP</a>
 						<a ui-sref="#">Waveform</a>
 						<a ui-sref="#">Sensor</a>  -->
 					</div>
 				</div><!--/dropdown-->
+				<p>Objects previously viewed:</p>
+					<ul>
+						<li>TLE example</li>
+						<li>ODO</li>
+					</ul>
 
 			</div><!--/one-third-->
-			<div class="four columns search">
+			<div class="four columns create">
 				<ui-view></ui-view>
 			</div>
 			<div class="four columns result">
 				<div class="border" id="result-panel">
-					<p>Search results here</p>
+					<p>create results here</p>
 					<!-- Data from the result controller returned to html -->
 					<div class="find-reset-buttons">
 						<button class="button-primary" id="add-button">Add to List</button>
