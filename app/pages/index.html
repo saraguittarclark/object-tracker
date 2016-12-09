@@ -20,7 +20,7 @@
   	<link rel="icon" type="image/png" href="/assets/images/favicon-satellite.png">
 </head>
 
-<body>
+<body ng-controller="ResultCtrl">
 <section id="header">
 	<div class="container">
 		<div class="row">
@@ -33,20 +33,7 @@
 <section id="main">
 	<div class="container">
 		<div class="row">
-			<div class="four columns border">	
-
-				<!--SAMPLE LIST ONLY/NOT FOR PRODUCTION-->
-				<!--will show the viewer's list and new user default text-->
-				<!-- <h5>Create an Object</h5> -->
-<!-- 				<ul id="list">
-					<li><a ui-sref="result">TLE 1</a></li>
-					<li><a ui-sref="result">Platform</a></li>
-					<li><a ui-sref="result">Receiver</a></li>
-					<li><a ui-sref="result">TLE 4</a></li>
-				</ul> -->
-				<!-- <p><a ui-sref="#">Reset List</a></p> -->
-				<!--button click will clear list, confirm-->
-				<!--SAMPLE LIST ONLY/NOT FOR PRODUCTION-->
+			<div class="twelve columns">	
 				<div class="dropdown">
 					<button class="dropdown-button">Create an Object <i class="fa fa-caret-down"></i></button>
 					<div class="dropdown-content u-full-width">
@@ -57,27 +44,28 @@
 						<a ui-sref="create.receiver">Receiver - Fixed Sensitivity</a>
 						<a ui-sref="create.transmitter-default">Transmitter - Default</a>
 						<a ui-sref="create.transmitter-eirp">Transmitter - Fixed EIRP</a>
-
-<!-- 					<a ui-sref="Simulation">Create a Simulation</a>
- 						<a ui-sref="#">GRP</a>
-						<a ui-sref="#">Waveform</a>
-						<a ui-sref="#">Sensor</a>  -->
 					</div>
 				</div><!--/dropdown-->
-				<p>Objects previously viewed:</p>
-					<ul>
-						<li>TLE example</li>
-						<li>ODO</li>
-					</ul>
-
 			</div><!--/one-third-->
+		</div><!--/row-->
+		<div class="row">
 			<div class="four columns create">
-				<ui-view></ui-view>
+					<ui-view></ui-view>
 			</div>
 			<div class="four columns result">
-				<div class="border" id="result-panel">
-					<p>create results here</p>
-					<!-- Data from the result controller returned to html -->
+				<div class="border" id="result-panel" ng-show="showme">
+					<div>
+						<ul>Returned Objects:
+							<li ng-repeat="object in objectData">
+								{{object.name}} |
+								<!-- <p>{{object.id}}</p> -->
+								{{object.type}}
+							</li>
+						</ul>
+					</div> 
+<!-- 					<div ng-show="showme=false">
+						<p>Results will be here.</p>
+					</div> -->
 					<div class="find-reset-buttons">
 						<button class="button-primary" id="add-button">Add to List</button>
 						<button id="blank-button">Reset</button>
@@ -96,12 +84,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
 <script src="/scripts/app.js"></script>
 <script src="/scripts/services/Objects.js"></script>
-<script src="/scripts/controllers/ListCtrl.js"></script>
-<script src="/scripts/controllers/ReceiverCtrl.js"></script>
-<script src="/scripts/controllers/TransmitterDCtrl.js"></script>
-<script src="/scripts/controllers/TransmitterECtrl.js"></script>
-<script src="/scripts/controllers/PlatformTLECtrl.js"></script>
-<script src="/scripts/controllers/PlatformStaticCtrl.js"></script>
 <script src="/scripts/controllers/ResultCtrl.js"></script>
 </body>
 

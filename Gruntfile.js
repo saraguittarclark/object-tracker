@@ -16,6 +16,7 @@ module.exports = function(grunt) {
                     './app/styles/**/*.css',
                     './app/pages/**/*.html',
                     './app/templates/**/*.html',
+                    './app/scripts/**/*.json',
                     'Gruntfile.js'
                 ],
                 tasks: [
@@ -55,6 +56,11 @@ module.exports = function(grunt) {
                     src: [ './**/*.html' ],
                     dest: './dist/templates',
                     cwd: './app/templates'
+                }, {
+                    expand: true,
+                    src: ['./**/*.json'],
+                    dest: './dist/scripts/services',
+                    cwd: './app/scripts/services'
                 }]
             }
         },

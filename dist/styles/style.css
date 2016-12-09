@@ -1,3 +1,17 @@
+/*CARD APPEARANCE*/
+.border {
+	display: inline-block;
+	padding-top: 1rem;
+	background-color: transparent;
+	border-radius: 5px;
+	border: 1px solid #bbb;
+	cursor: pointer;
+	box-sizing: border-box; 
+	min-height: auto;
+	text-align: left;
+	padding-left: 1rem;
+}
+
 /*Dropdown styles*/
 
 .dropdown-button {
@@ -25,6 +39,10 @@
 	display: block;
 }
 
+/*.dropdown-content:hover {
+	display: block;
+}*/
+
 .dropdown-content a:hover {
 	text-decoration: underline;
 	background-color: #f1f1f1;
@@ -48,19 +66,11 @@
 	margin-bottom: 0;
 }
 
-/*CARD APPEARANCE*/
-.border {
-	display: inline-block;
-	padding: 0 30px;
-	background-color: transparent;
-	border-radius: 2px;
-	border: 1px solid #bbb;
-	cursor: pointer;
-	box-sizing: border-box; 
-	min-height: 380px;
-}
-
-/*RESULTS BEHAVIOR*/
-#result-panel {
+/*RESULTS and CREATE BEHAVIOR*/
+/*#result-panel {
 	display: none;
-}
+}*/
+
+/*#create-panel {
+	display: none;
+}*/

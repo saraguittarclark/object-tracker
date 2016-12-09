@@ -1,5 +1,5 @@
 (function() {
-     function config($stateProvider, $locationProvider) {
+     function config($stateProvider, $locationProvider, $urlRouterProvider) {
      	$locationProvider
          	.html5Mode({
             	enabled: true,
@@ -8,10 +8,15 @@
 
         $stateProvider
 
+            .state('home', {
+                url: '/', 
+                controller: 'ResultCtrl as result',
+            })
+
             .state('create', {
-                url: '/create',
+                url: '/create', 
                 templateUrl: '/templates/create.html',
-                controller: 'ResultCtrl as result'
+                // controller: 'ResultCtrl as result',
             })
 
             .state('create.antenna', {
@@ -21,48 +26,32 @@
          	
          	.state('create.receiver', {
          		url: '/receiver',
-                controller: 'ReceiverCtrl as receiver',
          		templateUrl: '/templates/receiver.html'
          	})
 
             .state('create.transmitter-default', {
                 url:'/transmitter-default',
-                controller: 'TransmitterDCtrl as transmitterDefault',
                 templateUrl: '/templates/transmitter-default.html'
             })
 
             .state('create.transmitter-eirp', {
                 url:'/transmitter-eirp',
-                controller:'TransmitterECtrl as transmitterEirp',
                 templateUrl: '/templates/transmitter-eirp.html'
             }) 
 
             .state('create.platform-satellite', {
                 url: '/platform-satellite',
-                controller: 'PlatformTLECtrl as platformSatellite',
                 templateUrl: '/templates/platform-satellite.html'
             })
 
             .state('create.platform-static', {
                 url: '/platform-static',
-                controller: 'PlatformStaticCtrl as platformStatic',
                 templateUrl: '/templates/platform-static.html'
-            })
-
-            .state('create.tle', {
-                url:'/tle',
-                templateUrl:'/templates/tle.html'
             })
 
             .state('create.odo', {
                 url:'/odo',
                 templateUrl:'/templates/odo.html'
-            })
-
-            .state('result', {
-                url: '/data', 
-                controller: 'ResultCtrl as result',
-                templateUrl: '/templates/result.html'
             })
 
     }
