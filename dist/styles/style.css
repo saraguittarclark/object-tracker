@@ -10,6 +10,7 @@
 	min-height: auto;
 	text-align: left;
 	padding-left: 1rem;
+	padding-right: 1rem;
 }
 
 /*Dropdown styles*/
@@ -65,12 +66,3 @@
 .search h5 {
 	margin-bottom: 0;
 }
-
-/*RESULTS and CREATE BEHAVIOR*/
-/*#result-panel {
-	display: none;
-}*/
-
-/*#create-panel {
-	display: none;
-}*/

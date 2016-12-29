@@ -15,8 +15,7 @@
 
             .state('create', {
                 url: '/create', 
-                templateUrl: '/templates/create.html',
-                // controller: 'ResultCtrl as result',
+                templateUrl: '/templates/create.html'
             })
 
             .state('create.antenna', {

@@ -20,7 +20,7 @@
   	<link rel="icon" type="image/png" href="/assets/images/favicon-satellite.png">
 </head>
 
-<body ng-controller="ResultCtrl">
+<body>
 <section id="header">
 	<div class="container">
 		<div class="row">
@@ -48,30 +48,14 @@
 				</div><!--/dropdown-->
 			</div><!--/one-third-->
 		</div><!--/row-->
+		<div id="testing" class="row">
+			Returned Objects:
+			<ul ng-repeat="object in objectData">
+				<li ng-repeat="(name, val) in object">{{name}}: {{val}}</li>
+			</ul>
+		</div>
 		<div class="row">
-			<div class="four columns create">
-					<ui-view></ui-view>
-			</div>
-			<div class="four columns result">
-				<div class="border" id="result-panel" ng-show="showme">
-					<div>
-						<ul>Returned Objects:
-							<li ng-repeat="object in objectData">
-								{{object.name}} |
-								<!-- <p>{{object.id}}</p> -->
-								{{object.type}}
-							</li>
-						</ul>
-					</div> 
-<!-- 					<div ng-show="showme=false">
-						<p>Results will be here.</p>
-					</div> -->
-					<div class="find-reset-buttons">
-						<button class="button-primary" id="add-button">Add to List</button>
-						<button id="blank-button">Reset</button>
-					</div>
-				</div>
-			</div> 
+			<ui-view></ui-view>
 		</div><!--/row-->
 	</div><!--container-->
 </section><!--/main-->

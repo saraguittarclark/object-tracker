@@ -1,18 +1,25 @@
-	<div class="border">
-		<ui-view></ui-view>
-		<div class="find-reset-buttons">
-			<button class="button-primary" id="search-button" ng-click="showme=true">Create | View</button>
-			<button id="reset-button" ng-click="showme=false">Reset Fields</button>
+	<div class="four columns create">
+		<div class="border">
+			<ui-view></ui-view>
+			<div class="find-reset-buttons">
+				<button class="button-primary" id="search-button" ng-click="showme=true">Create | View</button>
+				<button id="reset-button" ng-click="showme=false">Reset Fields</button>
+			</div>
 		</div>
 	</div>
-
-
-<!-- get ng-clicks to work or switch to ng-show/hide
-set show to false to hide, true to show
-- Can get the buttons to hide with show/hide set to false, but on the buttons not the panel, wasn;t set to the panel ugh! bind the two??
-- would rather just get the clicks to work, I think
-display data! SOMEHOW 
-
-remove create template, move to index???? to streamline and make simpler
-showme=true not working here - have a hidden it somewhere else?
--->
+	<div class="four columns result">
+		<div class="border" id="result-panel" ng-show="showme">
+			<div>
+				<ul>Returned Objects:
+					<li>
+						Name will display here | Type will display here
+						<!-- display actual data here once figured out -->
+					</li>
+				</ul>
+			</div> 
+			<div class="find-reset-buttons">
+				<button class="button-primary" id="add-button">Add to List</button>
+				<button id="blank-button">Reset</button>
+			</div>
+		</div>
+	</div> 
