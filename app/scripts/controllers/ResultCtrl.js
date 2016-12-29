@@ -1,14 +1,15 @@
 (function() {
-    function ResultCtrl(Objects) {
+    function ResultCtrl($scope, Objects) {
         var objectData = Objects.getData();
-        var objectsArray = objectData;
-        console.log(objectData);
-        // console.log(objectsArray);
+        // var objectsArray = objectData;
+        $scope.objects = objectData;
+        console.log($scope.objects);
+        
     }
 //added objects to local controller? html isn't reading objects from html, just js
 //break apart array? array vs. json list
  
      angular
          .module('objectTracker')
-         .controller('ResultCtrl', ['Objects', ResultCtrl]);
+         .controller('ResultCtrl', ['$scope','Objects', ResultCtrl]);
  })();
