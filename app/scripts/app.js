@@ -10,7 +10,7 @@
 
             .state('home', {
                 url: '/', 
-                controller: 'ResultCtrl as result',
+                controller: 'ResultCtrl',
             })
 
             .state('create', {

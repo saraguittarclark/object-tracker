@@ -3,6 +3,7 @@
         var objectData = Objects.getData();
         // var objectsArray = objectData;
         $scope.objects = objectData;
+        // console.log(objectData);
         console.log($scope.objects);
         
     }
