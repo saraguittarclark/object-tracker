@@ -1,19 +1,18 @@
 	<div class="four columns create">
 		<div class="border">
 			<ui-view></ui-view>
-			<div class="find-reset-buttons">
+<!-- 			<div class="find-reset-buttons">
 				<button class="button-primary" id="search-button" ng-click="showme=true">Create | View</button>
 				<button id="reset-button" ng-click="showme=false">Reset Fields</button>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	<div class="four columns result">
 		<div class="border" id="result-panel" ng-show="showme">
 			<div>
 				<ul>Returned Objects:
-					<li>
-						Name will display here | Type will display here
-						<!-- display actual data here once figured out -->
+					<li ng-repeat="object in objects">
+						{{object.name}} | {{object.type}}
 					</li>
 				</ul>
 			</div> 

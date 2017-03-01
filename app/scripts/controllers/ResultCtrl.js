@@ -3,12 +3,13 @@
         var objectData = Objects.getData();
         // var objectsArray = objectData;
         $scope.objects = objectData;
-        // console.log(objectData);
-        console.log($scope.objects);
+        
+        //if input matches "antenna" return only object marked antenna, etc
+        //how to generalize?
+        //array.find()
+        //add validation to form and error message
         
     }
-//added objects to local controller? html isn't reading objects from html, just js
-//break apart array? array vs. json list
  
      angular
          .module('objectTracker')
